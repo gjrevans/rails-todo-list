@@ -16,14 +16,14 @@ class TodoListsController < ApplicationController
   end
 
   def new
-    @todo_list = TodoList.new
+    @todo_list = current_user.todo_lists.build
   end
 
   def edit
   end
 
   def create
-    @todo_list = TodoList.new(todo_list_params)
+    @todo_list = current_user.todo_lists.build(todo_list_params)
 
       if @todo_list.save
         redirect_to @todo_list, notice: 'Todo list was successfully created.'
