@@ -16,7 +16,7 @@ class TodoListsController < ApplicationController
   end
 
   def new
-    @todo_list = TodoList.new.build
+    @todo_list = TodoList.new
   end
 
   def edit
